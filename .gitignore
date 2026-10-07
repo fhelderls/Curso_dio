@@ -1,0 +1,13 @@
+# Material do curso DIO (slides da instrutora) - não redistribuir
+*.pptx
+analise_dataset_kaggle_diabetes.pbix
+
+# Arquivos temporários do Office / Power BI
+~$*
+*.tmp
+
+# Duplicata da base (a cópia oficial fica em Desafio_02/dados)
+/Financial Sample.xlsx
+
+# Documento de planejamento pessoal
+Desafio_02/Desafio_02_Plano.docx

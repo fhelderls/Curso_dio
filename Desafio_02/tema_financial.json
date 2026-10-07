@@ -1,0 +1,34 @@
+{
+  "name": "Financial Sample - Felipe",
+  "dataColors": ["#2563EB", "#0F1E3D", "#14B8A6", "#F59E0B", "#8B5CF6", "#64748B", "#DC2626", "#22C55E"],
+  "background": "#FFFFFF",
+  "foreground": "#0F1E3D",
+  "tableAccent": "#2563EB",
+  "good": "#16A34A",
+  "neutral": "#F59E0B",
+  "bad": "#DC2626",
+  "maximum": "#2563EB",
+  "center": "#93C5FD",
+  "minimum": "#EFF6FF",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#0F1E3D" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#475569" },
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 24, "color": "#0F1E3D" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#0F1E3D" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": false }],
+        "border": [{ "show": false }],
+        "dropShadow": [{ "show": false }],
+        "visualHeader": [{ "show": true }]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [{ "color": { "solid": { "color": "#F4F6FA" } } }]
+      }
+    }
+  }
+}

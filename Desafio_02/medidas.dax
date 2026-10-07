@@ -1,0 +1,56 @@
+// =====================================================================
+// MEDIDAS DAX - Desafio 02 DIO (Financial Sample)
+// Tabela: financials  (renomeie "Sheet1" para "financials" no Power Query)
+// Crie uma tabela vazia "_Medidas" (Inserir > Inserir Dados > Carregar) e
+// coloque todas as medidas nela. Separador: vírgula (padrão do Power BI).
+// Se o seu Power BI usar ponto e vírgula, troque "," por ";" nas funções.
+// =====================================================================
+
+// ---------- KPIs principais ----------
+Vendas = SUM ( financials[Sales] )
+
+Lucro = SUM ( financials[Profit] )
+
+Margem % = DIVIDE ( [Lucro], [Vendas] )
+// Formatar como Porcentagem, 1 casa decimal
+
+Unidades Vendidas = SUM ( financials[Units Sold] )
+
+Custo (COGS) = SUM ( financials[COGS] )
+
+Vendas Brutas = SUM ( financials[Gross Sales] )
+
+Descontos = SUM ( financials[Discounts] )
+
+% Desconto = DIVIDE ( [Descontos], [Vendas Brutas] )
+
+Preço Médio = DIVIDE ( [Vendas], [Unidades Vendidas] )
+
+// ---------- Apoio a formatação condicional ----------
+// Use em: Formatar visual > Barras/Colunas > Cor > fx > Valor do campo
+Cor Lucro =
+IF ( [Lucro] < 0, "#DC2626", "#2563EB" )
+
+Cor Margem =
+SWITCH (
+    TRUE (),
+    [Margem %] < 0, "#DC2626",
+    [Margem %] < 0.12, "#F59E0B",
+    "#16A34A"
+)
+
+// ---------- Rótulos dinâmicos (subtítulos de cartões / títulos) ----------
+// Formatar visual > Título > fx > Valor do campo
+Titulo Contexto =
+"Filtro: "
+    & IF ( ISFILTERED ( financials[Country] ), SELECTEDVALUE ( financials[Country], "Vários países" ), "Todos os países" )
+    & " · "
+    & IF ( ISFILTERED ( financials[Segment] ), SELECTEDVALUE ( financials[Segment], "Vários segmentos" ), "Todos os segmentos" )
+
+// ---------- Comparação entre anos (a base tem 2013 parcial: set-dez) ----------
+Lucro 2014 = CALCULATE ( [Lucro], financials[Year] = 2014 )
+Lucro 2013 = CALCULATE ( [Lucro], financials[Year] = 2013 )
+
+// ---------- Coluna calculada para eixo mensal ordenado ----------
+// Na tabela financials > Nova coluna:
+// Ano-Mês = FORMAT ( financials[Date], "yyyy-MM" )
