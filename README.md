@@ -1,11 +1,26 @@
 # Desafios Power BI – DIO | Formação Power BI Analyst
 
-Repositório com os desafios de projeto da **Formação Power BI Analyst (DIO)**, construídos sobre a base **Financial Sample** da Microsoft.
+Repositório com os desafios de projeto da **Formação Power BI Analyst (DIO)**.
 
 | Desafio | Entrega | Pasta |
 |---|---|---|
 | 01 – Explorando Dados e Relatórios | Relatório de 1 página (mapas e pizza) | `Desafio_DIO.pdf` |
-| **02 – Relatório com navegação, segmentadores e indicadores** | **Relatório de 4 páginas** | [`Desafio_02/`](Desafio_02) |
+| 02 – Relatório com navegação, segmentadores e indicadores | Relatório de 4 páginas (Financial Sample) | [`Desafio_02/`](Desafio_02) |
+| **03 – Integrando dados na nuvem (Azure SQL) com Power BI** | **Banco Company no Azure + 16 transformações no Power Query** | [`Desafio_03/`](Desafio_03) |
+
+---
+
+## Desafio 03 – Azure SQL + Power Query
+
+Banco **Company** criado no **Azure SQL Database** (oferta gratuita, Brazil South), conectado ao Power BI e tratado nas **16 diretrizes** do desafio: tipagem, nulos, divisão de endereço com M, mesclagens com junção externa esquerda, auto-mescla colaborador × gerente e agrupamentos.
+
+- **4 erros corrigidos** nos scripts SQL originais do curso e conversão MySQL → T-SQL.
+- **Achados:** único nulo é o diretor (James Borg), que também está alocado com 0 h em um projeto; endereço com hífen na rua tratado com M personalizado.
+- **Resultado:** 8 colaboradores · 3 departamentos · 6 projetos · 275 h.
+
+![Relatório de verificação](Desafio_03/prints/09_relatorio.png)
+
+Detalhes completos em [`Desafio_03/README.md`](Desafio_03/README.md).
 
 ---
 
